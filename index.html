@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pronab Sutradhar | Software Engineering Student Portfolio</title>
+  <meta name="description" content="Portfolio of Pronab Sutradhar, a Software Engineering student at Daffodil International University exploring AI, robotics and intelligent systems. Software projects, research and a mini game." />
+  <meta name="keywords" content="Pronab Sutradhar, Software Engineering Student, Software Developer Portfolio, AI, Robotics, Software Projects, Research, DIU, Bangladesh" />
+  <meta name="author" content="Pronab Sutradhar" />
+  <meta name="theme-color" content="#05080a" />
+
+  <!-- Open Graph. Add og:url and og:image after publishing. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pronab Sutradhar | Software Engineering Student" />
+  <meta property="og:description" content="Building software today. Exploring AI, robotics and intelligent systems for tomorrow." />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305080a'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2339ff88'%3EPS_%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Starfield background (decorative) -->
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <!-- HUD top bar -->
+  <header class="hud">
+    <a href="#home" class="logo" aria-label="Pronab Sutradhar, home">PS<span>_</span><b class="logo-name">Pronab Sutradhar</b></a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#research" class="nav-link" data-section="research">Research</a></li>
+        <li><a href="#academy" class="nav-link" data-section="academy">Academy</a></li>
+        <li><a href="#play" class="nav-link" data-section="play">Play</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="icon-btn" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section id="home" class="section hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow pixel">SOFTWARE · AI · ROBOTICS · RESEARCH</p>
+        <p class="hello mono">Hi, I'm</p>
+        <h1 id="hero-title" class="name">Pronab <span class="accent">Sutradhar</span></h1>
+        <p class="tagline">Building software today. <span class="accent">Exploring intelligent systems</span> for tomorrow.</p>
+        <p class="lead">I'm a Software Engineering student at Daffodil International University. I build programs in C, Java, Python and the web stack, and I'm exploring AI, robotics and research.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">Explore My Work <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          <a class="text-link mono" href="https://github.com/pronabcoding" target="_blank" rel="noopener noreferrer">github.com/pronabcoding ↗</a>
+        </div>
+        <ul class="chips mono">
+          <li><span class="dim">BASE</span> Dhaka, Bangladesh</li>
+          <li><span class="dim">FOCUS</span> AI · Robotics · Research</li>
+        </ul>
+      </div>
+
+      <!-- Original robot mascot; pupils follow the pointer (script.js) -->
+      <div class="robot-wrap">
+        <svg class="robot" id="robot" viewBox="0 0 240 270" role="img" aria-label="Friendly robot mascot whose eyes follow your cursor">
+          <line x1="120" y1="34" x2="120" y2="62" class="r-line"/>
+          <circle cx="120" cy="26" r="9" class="r-glow"/>
+          <rect x="34" y="98" width="16" height="42" rx="6" class="r-part"/>
+          <rect x="190" y="98" width="16" height="42" rx="6" class="r-part"/>
+          <rect x="50" y="62" width="140" height="116" rx="28" class="r-body"/>
+          <circle cx="92" cy="112" r="22" class="r-eye"/>
+          <circle cx="148" cy="112" r="22" class="r-eye"/>
+          <circle cx="92" cy="112" r="10" class="r-pupil" data-cx="92" data-cy="112"/>
+          <circle cx="148" cy="112" r="10" class="r-pupil" data-cx="148" data-cy="112"/>
+          <rect x="88" y="148" width="64" height="12" rx="6" class="r-part"/>
+          <path d="M104 148v12M120 148v12M136 148v12" class="r-line"/>
+          <rect x="104" y="178" width="32" height="14" class="r-part"/>
+          <rect x="62" y="192" width="116" height="66" rx="20" class="r-body"/>
+          <circle cx="120" cy="225" r="10" class="r-glow"/>
+        </svg>
+        <p class="mono robot-note">// hover me</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal" aria-labelledby="about-title">
+      <p class="eyebrow pixel">SECTOR 01 // ABOUT</p>
+      <h2 id="about-title">Building reliable software, one project at a time.</h2>
+      <div class="about-grid">
+        <div class="prose">
+          <p>Hey there! I’m <b><span style="color: white;">Pronab Sutradhar</span></b>. I'm studying Software Engineering at <b><span style="color: white;">Daffodil International University (DIU)</span></b> in Dhaka, Bangladesh. Most of my learning happens by building: small, practical programs that help me understand how software is structured and why it breaks.</p>
+          <p>I program in C, Java and Python, and build for the web with HTML, CSS and JavaScript. I apply these through hands-on projects, from console applications in C to responsive web pages.</p>
+          <p>I am extending my skills into artificial intelligence, machine learning and robotics. I want to keep improving through projects, experimentation and research.</p>
+          <div class="resume-mini" id="resume">
+            <div>
+              <p class="mono resume-label">RESUME</p>
+              <p class="resume-text">Want the details on paper? Download my resume.</p>
+            </div>
+            <div class="resume-actions">
+              <a class="btn btn-primary" id="resumeBtn" href="resume.pdf" download="Pronab-Sutradhar-Resume.pdf">Download Resume (PDF)</a>
+              <p class="resume-note mono" id="resumeNote" hidden>Resume PDF not uploaded yet. Please email me for a copy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card profile-card">
+          <img src="profile.png" width="480" height="600" alt="Portrait of Pronab Sutradhar" class="cover-img" id="avatar" loading="lazy" />
+          <div class="profile-overlay">
+            <!-- <p class="profile-name">Pronab Sutradhar</p>
+            <p class="profile-role mono">Software Engineering Student</p> -->
+            <blockquote class="statement">Exploring AI, robotics, and intelligent systems. Passionate about building practical solutions to real-world problems.</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
+      <p class="eyebrow pixel">SECTOR 02 // LOADOUT</p>
+      <h2 id="skills-title">My tech loadout.</h2>
+      <p class="section-intro">Tools I use now, and systems I'm still unlocking.</p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Web Development <span class="badge mono">equipped</span></h3>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        </article>
+        <article class="card">
+          <h3>Programming <span class="badge mono">equipped</span></h3>
+          <ul class="tags"><li>C</li><li>Java</li><li>Python</li></ul>
+        </article>
+        <article class="card">
+          <h3>Software Engineering <span class="badge mono">equipped</span></h3>
+          <ul class="tags"><li>Object-oriented programming</li><li>Problem-solving</li><li>Data structures</li><li>Application development</li></ul>
+        </article>
+        <article class="card card-explore">
+          <h3>Exploring <span class="badge badge-warn mono">unlocking</span></h3>
+          <ul class="tags"><li>Artificial Intelligence</li><li>Machine Learning</li><li>Robotics</li><li>Intelligent systems</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal" aria-labelledby="projects-title">
+      <p class="eyebrow pixel">SECTOR 03 // MISSIONS</p>
+      <h2 id="projects-title">Featured projects</h2>
+      <p class="section-intro">Practice projects from my coursework and self-study. Each mission links to its source code on GitHub.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects by technology">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="c" aria-pressed="false">C</button>
+        <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="card project" data-tags="web">
+          <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>mission_01</span></div>
+          <div class="art mono" aria-hidden="true"><span class="dim">~/pronabcoding/</span>Personal-profile-page<br /><span class="dim">&lt;/&gt;</span> index.html · style.css</div>
+          <h3>Personal Profile Page</h3>
+          <p>A personal webpage built to practice semantic HTML, CSS layouts, and personal information presentation.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+          <a class="text-link mono" href="https://github.com/pronabcoding/Personal-profile-page" target="_blank" rel="noopener noreferrer">View Source ↗<span class="sr-only"> for Personal Profile Page</span></a>
+        </article>
+
+        <article class="card project" data-tags="c">
+          <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>mission_02</span></div>
+          <div class="art mono" aria-hidden="true"><span class="dim">~/pronabcoding/</span>todo-list-c<br /><span class="dim">#include</span> &lt;stdio.h&gt;</div>
+          <h3>To-Do List in C</h3>
+          <p>A simple task management program developed in C.</p>
+          <ul class="tags"><li>C</li></ul>
+          <a class="text-link mono" href="https://github.com/pronabcoding/todo-list-c" target="_blank" rel="noopener noreferrer">View Source ↗<span class="sr-only"> for To-Do List in C</span></a>
+        </article>
+
+        <article class="card project" data-tags="c">
+          <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>mission_03</span></div>
+          <div class="art mono" aria-hidden="true"><span class="dim">~/pronabcoding/</span>tic-tac-toe-c<br /><span class="dim">#include</span> &lt;stdio.h&gt;</div>
+          <h3>Tic-Tac-Toe in C</h3>
+          <p>A two-player console game developed to practice programming logic and game conditions.</p>
+          <ul class="tags"><li>C</li></ul>
+          <a class="text-link mono" href="https://github.com/pronabcoding/tic-tac-toe-c" target="_blank" rel="noopener noreferrer">View Source ↗<span class="sr-only"> for Tic-Tac-Toe in C</span></a>
+        </article>
+
+        <article class="card project" data-tags="c">
+          <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>mission_04</span></div>
+          <div class="art mono" aria-hidden="true"><span class="dim">~/pronabcoding/</span>student-management-system-c<br /><span class="dim">#include</span> &lt;stdio.h&gt;</div>
+          <h3>Student Management System in C</h3>
+          <p>A student management application developed to practice structured programming and data handling.</p>
+          <ul class="tags"><li>C</li></ul>
+          <a class="text-link mono" href="https://github.com/pronabcoding/student-management-system-c" target="_blank" rel="noopener noreferrer">View Source ↗<span class="sr-only"> for Student Management System in C</span></a>
+        </article>
+
+        <article class="card project project-next" data-tags="all-only">
+          <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>mission_??</span></div>
+          <div class="art mono" aria-hidden="true">// next mission<br />python · ai · robotics · web</div>
+          <h3>More missions loading</h3>
+          <p>Python, AI, robotics and web projects are next. New work will appear on my GitHub first.</p>
+          <a class="text-link mono" href="https://github.com/pronabcoding?tab=repositories" target="_blank" rel="noopener noreferrer">Browse all repositories ↗</a>
+        </article>
+      </div>
+      <p class="filter-empty" id="filterEmpty" hidden>No projects match this filter yet.</p>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section reveal" aria-labelledby="research-title">
+      <p class="eyebrow pixel">SECTOR 04 // DEEP SPACE RESEARCH</p>
+      <h2 id="research-title">Practical technology for real-world problems.</h2>
+      <p class="section-intro">I'm interested in using software, embedded systems and robotics to address problems in agriculture. These are my two ResearchGate entries; please read them there for full details and status.</p>
+
+      <div class="card-grid research-grid">
+        <article class="card research">
+          <p class="badge mono">Research Work · ResearchGate</p>
+          <h3>Smart Field Alert System Using Arduino for Agricultural Intrusion Detection</h3>
+          <p>Work on an Arduino-based alert system for detecting intrusion in agricultural fields.</p>
+          <a class="text-link mono" href="https://www.researchgate.net/publication/404114451_Smart_Field_Alert_System_Using_Arduino_for_Agricultural_Intrusion_Detection" target="_blank" rel="noopener noreferrer">Read on ResearchGate ↗<span class="sr-only">: Smart Field Alert System</span></a>
+        </article>
+        <article class="card research">
+          <p class="badge mono">Research Work · ResearchGate</p>
+          <h3>Agricultural Robotics in Bangladesh</h3>
+          <p>Work exploring the role of agricultural robotics in the context of Bangladesh.</p>
+          <a class="text-link mono" href="https://www.researchgate.net/publication/404390827_Agricultural_Robotics_in_Bangladesh" target="_blank" rel="noopener noreferrer">Read on ResearchGate ↗<span class="sr-only">: Agricultural Robotics in Bangladesh</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACADEMY -->
+    <section id="academy" class="section reveal" aria-labelledby="academy-title">
+      <p class="eyebrow pixel">SECTOR 05 // ACADEMY</p>
+      <h2 id="academy-title">Where I study.</h2>
+      <article class="card academy-card">
+        <div class="win-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>academy.log</span></div>
+        <div class="academy-grid">
+          <div class="academy-mark pixel" aria-hidden="true">DIU</div>
+          <div>
+            <h3>Daffodil International University (DIU)</h3>
+            <p class="academy-sub">Software Engineering student</p>
+            <p class="mono dim academy-loc">Dhaka, Bangladesh</p>
+            <p>I'm studying Software Engineering at DIU, building a foundation in programming, object-oriented design, data structures and problem-solving, and applying it in hands-on projects and research.</p>
+            <ul class="tags"><li>Software Engineering</li><li>Programming</li><li>Object-oriented programming</li><li>Data structures</li><li>Problem-solving</li></ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- PLAY: optional mini game -->
+    <section id="play" class="section reveal" aria-labelledby="play-title">
+      <p class="eyebrow pixel">SECTOR 06 // PLAY ZONE</p>
+      <h2 id="play-title">Dodge the asteroids.</h2>
+      <p class="section-intro">An optional little game I built with plain JavaScript. Steer the rocket with the arrow keys (or A / D), or use the on-screen buttons or drag on the screen. Your best time is saved in this browser only.</p>
+      <div class="game">
+        <canvas id="gameCanvas" width="320" height="420" role="img" aria-label="Rocket dodge game: move the rocket left and right to avoid falling asteroids"></canvas>
+        <div class="game-ui">
+          <p class="mono">TIME <b id="gScore">0.0</b>s · BEST <b id="gBest">0.0</b>s</p>
+          <p class="mono game-msg" id="gMsg" role="status">Press Start to launch.</p>
+          <div class="game-btns">
+            <button class="btn btn-primary" id="gStart" type="button">Start</button>
+            <button class="btn btn-ghost" id="gLeft" type="button" aria-label="Move left">← Left</button>
+            <button class="btn btn-ghost" id="gRight" type="button" aria-label="Move right">Right →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal" aria-labelledby="contact-title">
+      <p class="eyebrow pixel">SECTOR 07 // COMMS</p>
+      <h2 id="contact-title">Let's talk.</h2>
+      <div class="contact-grid">
+        <div class="prose">
+          <p>I'm open to collaboration, internships, project discussions and research conversations. Send a message and I'll get back to you.</p>
+          <ul class="contact-list">
+            <!--Email, github, linkedin-->
+            <li><span class="mono dim"><i class="fa-regular fa-envelope"></i></span> <a href="mailto:sutradharpronab628@gmail.com">sutradharpronab628@gmail.com</a></li>
+            <li><span class="mono dim"><i class="fa-brands fa-github"></i></span> <a href="https://github.com/pronabcoding" target="_blank" rel="noopener noreferrer">github.com/pronabcoding</a></li>
+            <li><span class="mono dim"><i class="fa-brands fa-square-linkedin"></i></span> <a href="https://linkedin.com/in/pronabsutradhar" target="_blank" rel="noopener noreferrer">linkedin.com/in/pronabsutradhar</a></li>
+            <!-- <li><span class="mono dim">Form</span> <a href="https://forms.gle/9UnCrxRaQTY4eqtw5" target="_blank" rel="noopener noreferrer">Use the Google Form instead</a></li> -->
+          </ul>
+        </div>
+
+        <form id="contactForm" class="form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err" />
+            <p class="error" id="name-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err" />
+            <p class="error" id="email-err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required minlength="10" aria-describedby="message-err"></textarea>
+            <p class="error" id="message-err" role="alert"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed and built by Pronab Sutradhar · © <span id="year">2026</span></p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/pronabcoding" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/pronabsutradhar" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+  <!-- Rocket = back-to-top button. It climbs the screen as you scroll down the page. -->
+  <button class="rocket" id="toTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 32 64" width="30" height="60" aria-hidden="true">
+      <path class="flame" d="M12 46q4 18 8 0z"/>
+      <path d="M16 2q10 12 10 30v14H6V32Q6 14 16 2z" class="rk-body"/>
+      <circle cx="16" cy="24" r="5" class="rk-window"/>
+      <path d="M6 34L0 50l6-4zM26 34l6 16-6-4z" class="rk-fin"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
